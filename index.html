@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adventure Island — English Series</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ocean: #1a6fa8;
+        --ocean-dark: #0d4f7c;
+        --ocean-light: #e6f4fb;
+        --sand: #f7c948;
+        --sand-dark: #e0a800;
+        --white: #ffffff;
+        --text: #1a2a3a;
+        --text-muted: #4a6074;
+        --card-shadow: 0 4px 24px rgba(26, 111, 168, 0.1);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        background: #f0f8ff;
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      /* HERO */
+      .hero {
+        background: linear-gradient(
+          160deg,
+          #0d4f7c 0%,
+          #1a6fa8 45%,
+          #2596be 100%
+        );
+        padding: 60px 24px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-wave {
+        display: block;
+        width: 100%;
+        margin-bottom: -4px;
+      }
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 6px 18px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+      }
+      .hero h1 {
+        font-family: "Chalkboard SE", "Comic Sans MS", "Baloo 2", cursive;
+        font-size: clamp(52px, 9vw, 100px);
+        font-weight: 800;
+        color: #f7c948;
+        -webkit-text-stroke: 4px #e07000;
+        paint-order: stroke fill;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      .hero h1.ja {
+        font-size: clamp(32px, 6vw, 70px);
+        -webkit-text-stroke: 3px #e07000;
+      }
+      .hero h1 span {
+        color: #f7c948;
+      }
+
+      .hero-sub {
+        font-family: "Baloo 2", cursive;
+        font-size: clamp(18px, 3vw, 28px);
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 16px;
+      }
+      .hero-desc {
+        max-width: 540px;
+        margin: 0 auto 32px;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.7;
+      }
+
+      /* CHARACTERS HERO ROW */
+      .hero-chars-row {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 0;
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        margin-top: -80px;
+        margin-bottom: -60px;
+      }
+      .hero-char {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+      .hero-char img {
+        width: clamp(200px, 32vw, 360px);
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+        display: block;
+      }
+      .hero-char-label {
+        position: absolute;
+        top: -10px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        padding: 4px 14px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      /* INTRO BAND */
+      .intro-band {
+        background: var(--sand);
+        padding: 18px 24px;
+        text-align: center;
+      }
+      .intro-band p {
+        font-weight: 700;
+        font-size: 15px;
+        color: #6b4800;
+        letter-spacing: 0.5px;
+      }
+
+      /* BOOKS SECTION */
+      .books-section {
+        padding: 60px 24px 80px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .section-title {
+        font-family: "Baloo 2", cursive;
+        font-size: clamp(28px, 4vw, 42px);
+        font-weight: 800;
+        color: var(--ocean-dark);
+        text-align: center;
+        margin-bottom: 8px;
+      }
+      .section-sub {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 16px;
+        margin-bottom: 48px;
+      }
+      .books-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 32px;
+      }
+
+      /* BOOK CARD */
+      .book-card {
+        background: #fff;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        display: flex;
+        flex-direction: column;
+        animation: fadeUp 0.5s ease both;
+      }
+      .book-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 40px rgba(26, 111, 168, 0.2);
+      }
+      .book-card:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      .book-card:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .book-card:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      .book-card:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      .book-card:nth-child(5) {
+        animation-delay: 0.25s;
+      }
+      .book-card:nth-child(6) {
+        animation-delay: 0.3s;
+      }
+      .book-card:nth-child(7) {
+        animation-delay: 0.35s;
+      }
+
+      /* COVER IMAGE */
+      .book-cover-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        background: #eee;
+      }
+      .book-cover-wrap img.cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+      .book-card:hover .book-cover-wrap img.cover {
+        transform: scale(1.04);
+      }
+
+      /* CHARACTER CUTOUTS ON COVER */
+      .cover-chars {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 8px;
+        pointer-events: none;
+      }
+      .cover-chars img {
+        height: clamp(80px, 22%, 130px);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+        transition: transform 0.3s ease;
+      }
+      .book-card:hover .cover-chars img:first-child {
+        transform: translateX(-4px);
+      }
+      .book-card:hover .cover-chars img:last-child {
+        transform: translateX(4px);
+      }
+
+      /* CARD BODY */
+      .book-card-body {
+        padding: 20px 22px 22px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .book-level-badge {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        background: var(--c);
+        color: #fff;
+      }
+      .book-title {
+        font-family: "Baloo 2", cursive;
+        font-size: 21px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 4px;
+        color: var(--c);
+      }
+      .book-tagline {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--c);
+        opacity: 0.7;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+      }
+      .book-setting {
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 14px;
+        flex: 1;
+      }
+      .features-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 14px;
+      }
+      .features-list li {
+        font-size: 12.5px;
+        color: var(--text-muted);
+        padding-left: 16px;
+        position: relative;
+      }
+      .features-list li::before {
+        content: "✦";
+        position: absolute;
+        left: 0;
+        font-size: 8px;
+        top: 3px;
+        color: var(--c);
+      }
+      .cefr-bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+        padding-top: 12px;
+        border-top: 1px solid #eef2f6;
+      }
+      .cefr-label {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--text-muted);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .cefr-pip {
+        width: 22px;
+        height: 8px;
+        border-radius: 4px;
+        background: #e8f0f6;
+        flex-shrink: 0;
+      }
+      .cefr-pip.on {
+        background: var(--c);
+      }
+
+      /* COLOUR THEMES */
+      .t-red {
+        --c: #d63031;
+        --cl: #fff5f5;
+      }
+      .t-blue {
+        --c: #1a6fa8;
+        --cl: #e6f4fb;
+      }
+      .t-green {
+        --c: #2e8b57;
+        --cl: #edfaf3;
+      }
+      .t-yellow {
+        --c: #c87000;
+        --cl: #fff8e6;
+      }
+      .t-teal {
+        --c: #0097a7;
+        --cl: #e0f7fa;
+      }
+      .t-indigo {
+        --c: #5c35d6;
+        --cl: #f0ecff;
+      }
+      .t-pink {
+        --c: #c0187a;
+        --cl: #fce4f1;
+      }
+
+      /* ABOUT */
+      .about-section {
+        background: var(--ocean-dark);
+        padding: 70px 24px;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      .about-section h2 {
+        font-family: "Baloo 2", cursive;
+        font-size: clamp(32px, 8vw, 1000px);
+        font-weight: 800;
+        margin-bottom: -40px;
+        color: var(--sand);
+      }
+      .about-section p {
+        max-width: 600px;
+        margin: 0 auto 14px;
+        font-size: 16px;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .stats-row {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+        margin-top: 44px;
+        flex-wrap: wrap;
+      }
+      .stat-num {
+        font-family: "Baloo 2", cursive;
+        font-size: 44px;
+        font-weight: 800;
+        color: var(--sand);
+        line-height: 1;
+      }
+      .stat-label {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.55);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 4px;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #0d2b40;
+        padding: 26px 24px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 13px;
+      }
+      footer strong {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* CHARLIE CAT */
+      .charlie-hero {
+        position: absolute;
+        bottom: 60px;
+        right: clamp(8px, 5vw, 80px);
+        width: clamp(70px, 10vw, 120px);
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+      }
+      .charlie-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+      .charlie-section img {
+        width: clamp(80px, 12vw, 140px);
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+      }
+      .charlie-bubble {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 16px;
+        padding: 12px 20px;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        max-width: 260px;
+        text-align: left;
+        line-height: 1.5;
+        position: relative;
+      }
+      .charlie-bubble::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 6px solid transparent;
+        border-right-color: rgba(255, 255, 255, 0.25);
+      }
+      .charlie-footer {
+        position: absolute;
+        bottom: 70px;
+        right: 20px;
+        width: 80px;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+        animation: charlieBob 2.5s ease-in-out infinite;
+      }
+      @keyframes charlieBob {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* LANGUAGE TOGGLE */
+      .lang-toggle {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        z-index: 999;
+        background: var(--sand);
+        color: #6b4800;
+        border: none;
+        border-radius: 24px;
+        padding: 12px 24px;
+        font-family: "Nunito", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: background 0.2s ease;
+      }
+      .lang-toggle:hover {
+        background: var(--sand-dark);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="lang-toggle" id="langBtn" onclick="toggleLang()">
+      🇯🇵 日本語
+    </button>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-badge">ESL English Series</div>
+      <h1>Adventure Island</h1>
+      <p class="hero-sub">
+        A journey through English — from first words to fluency
+      </p>
+      <p class="hero-desc">
+        Join Kevin and Sami on epic adventures — from deep-sea coral reefs to
+        enchanted skies — as young learners build real English skills every step
+        of the way.
+      </p>
+
+      <div class="hero-chars-row">
+        <div class="hero-char">
+          <img src="Kevin_JHS.png" alt="Kevin" />
+        </div>
+        <div class="hero-char">
+          <img src="Sami_JHS.png" alt="Sami" />
+        </div>
+      </div>
+      <img class="charlie-hero" src="charlie_cat.png" alt="Charlie the cat" />
+
+      <svg
+        class="hero-wave"
+        viewBox="0 0 1440 60"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z"
+          fill="#f0f8ff"
+        />
+      </svg>
+    </section>
+
+    <!-- INTRO BAND -->
+    <div class="intro-band">
+      <p>
+        8 books &nbsp;·&nbsp; Pre-A1 to A2+ &nbsp;·&nbsp; Homework videos
+        included &nbsp;·&nbsp; Songs &amp; comics &nbsp;·&nbsp; Created by
+        Graeme Cattermole
+      </p>
+    </div>
+
+    <!-- BOOKS -->
+    <section class="books-section">
+      <h2 class="section-title">The Complete Series</h2>
+      <p class="section-sub">
+        Each book takes Kevin and Sami — and your students — somewhere brand
+        new.
+      </p>
+
+      <div class="books-grid">
+        <!-- FIRST STEPS -->
+        <div class="book-card t-red">
+          <div class="book-cover-wrap">
+            <img
+              class="cover"
+              src="cover.fs.jpg"
+              alt="Adventure Island: First Steps cover"
+            />
+          </div>
+          <div class="book-card-body">
+            <div class="book-level-badge">Pre-A1</div>
+            <div class="book-title">First Steps</div>
+            <div class="book-tagline">Your first steps in English!</div>
+            <p class="book-setting">
+              Kevin and Sami prepare for their very first journey — packing bags
+              at home before the adventure begins.
+            </p>
+            <ul class="features-list">
+              <li>20 easy-to-follow units</li>
+              <li>40 homework videos</li>
+              <li>Basic commands &amp; phrases</li>
+              <li>Over 120 words · 19 songs included</li>
+            </ul>
+            <div class="cefr-bar">
+              <span class="cefr-label">CEFR</span>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip"></div>
+              <div class="cefr-pip"></div>
+              <div class="cefr-pip"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 1 -->
+        <div class="book-card t-blue">
+          <div class="book-cover-wrap">
+            <img
+              class="cover"
+              src="cover1.jpg"
+              alt="Adventure Island 1 cover"
+            />
+          </div>
+          <div class="book-card-body">
+            <div class="book-level-badge">A1</div>
+            <div class="book-title">Adventure Island 1</div>
+            <div class="book-tagline">
+              Phonics, Reading &amp; Beginner English
+            </div>
+            <p class="book-setting">
+              Dive into the deep sea — coral reefs, mysterious creatures, and
+              the sounds of English phonics under the waves.
+            </p>
+            <ul class="features-list">
+              <li>34 easy-to-follow units</li>
+              <li>45 homework videos</li>
+              <li>Full A–Z phonics explanations</li>
+              <li>Over 100 words · review comic</li>
+            </ul>
+            <div class="cefr-bar">
+              <span class="cefr-label">CEFR</span>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip"></div>
+              <div class="cefr-pip"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 2 -->
+        <div class="book-card t-green">
+          <div class="book-cover-wrap">
+            <img
+              class="cover"
+              src="cover2.jpg"
+              alt="Adventure Island 2 cover"
+            />
+          </div>
+          <div class="book-card-body">
+            <div class="book-level-badge">Upper A1</div>
+            <div class="book-title">Adventure Island 2</div>
+            <div class="book-tagline">
+              Beginner Phrases, Reading, Writing &amp; More
+            </div>
+            <p class="book-setting">
+              Trek into the emerald jungle — lush rainforests, exotic wildlife,
+              and the first building blocks of English sentences.
+            </p>
+            <ul class="features-list">
+              <li>18 easy-to-follow units</li>
+              <li>34 homework videos</li>
+              <li>Comics to reinforce grammar</li>
+              <li>Over 200 words · 12+ grammar points</li>
+            </ul>
+            <div class="cefr-bar">
+              <span class="cefr-label">CEFR</span>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip"></div>
+              <div class="cefr-pip"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 3 -->
+        <div class="book-card t-yellow">
+          <div class="book-cover-wrap">
+            <img
+              class="cover"
+              src="cover3.jpg"
+              alt="Adventure Island 3 cover"
+            />
+          </div>
+          <div class="book-card-body">
+            <div class="book-level-badge">A1</div>
+            <div class="book-title">Adventure Island 3</div>
+            <div class="book-tagline">
+              Modal Verbs, Present Simple &amp; More
+            </div>
+            <p class="book-setting">
+              Step onto sun-drenched shores — golden sands, hidden island
+              treasures, and expanding English grammar knowledge.
+            </p>
+            <ul class="features-list">
+              <li>18 easy-to-follow lessons</li>
+              <li>34 homework videos</li>
+              <li>Comics to reinforce grammar</li>
+              <li>Over 200 words · 12+ grammar points</li>
+            </ul>
+            <div class="cefr-bar">
+              <span class="cefr-label">CEFR</span>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip"></div>
+              <div class="cefr-pip"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 4 -->
+        <div class="book-card t-teal">
+          <div class="book-cover-wrap">
+            <img
+              class="cover"
+              src="cover4.jpg"
+              alt="Adventure Island 4 cover"
+            />
+          </div>
+          <div class="book-card-body">
+            <div class="book-level-badge">A1+</div>
+            <div class="book-title">Adventure Island 4</div>
+            <div class="book-tagline">
+              Past, Present, Future Tense &amp; More
+            </div>
+            <p class="book-setting">
+              Trade sandals for snow boots as Kevin and Sami climb frost-covered
+              peaks — mastering all three tenses of English.
+            </p>
+            <ul class="features-list">
+              <li>18 easy-to-follow lessons</li>
+              <li>34 homework videos</li>
+              <li>Comics to reinforce grammar</li>
+              <li>Over 200 words · 20+ grammar points</li>
+            </ul>
+            <div class="cefr-bar">
+              <span class="cefr-label">CEFR</span>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 5 -->
+        <div class="book-card t-indigo">
+          <div class="book-cover-wrap">
+            <img
+              class="cover"
+              src="cover5.jpg"
+              alt="Adventure Island 5 cover"
+            />
+          </div>
+          <div class="book-card-body">
+            <div class="book-level-badge">Lower A2</div>
+            <div class="book-title">Adventure Island 5</div>
+            <div class="book-tagline">
+              A Grammar &amp; Writing Focused Experience
+            </div>
+            <p class="book-setting">
+              Soar through the Enchanted Skies — gravity-defying landscapes
+              where language and imagination reach their peak.
+            </p>
+            <ul class="features-list">
+              <li>18 easy-to-follow units</li>
+              <li>2 review and test units</li>
+              <li>14+ grammar points</li>
+              <li>Report writing practice</li>
+            </ul>
+            <div class="cefr-bar">
+              <span class="cefr-label">CEFR</span>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JHS -->
+        <div class="book-card t-pink">
+          <div class="book-cover-wrap">
+            <img
+              class="cover"
+              src="coverjhs.jpg"
+              alt="Adventure Island JHS cover"
+            />
+          </div>
+          <div class="book-card-body">
+            <div class="book-level-badge">A2+</div>
+            <div class="book-title">Adventure Island JHS</div>
+            <div class="book-tagline">
+              Essential Speaking, Listening &amp; Communication
+            </div>
+            <p class="book-setting">
+              The final frontier — Adventure Academy Junior High, where
+              knowledge transforms into confident real-world communication.
+            </p>
+            <ul class="features-list">
+              <li>32 speaking units · 6 grammar units</li>
+              <li>Topic-based discussion points</li>
+              <li>Report writing &amp; listening practice</li>
+              <li>JHS vocabulary · printed in Japan</li>
+            </ul>
+            <div class="cefr-bar">
+              <span class="cefr-label">CEFR</span>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip on"></div>
+              <div class="cefr-pip on"></div>
+            </div>
+          </div>
+        </div>
+        <!-- SPEAKING ADVENTURE (adult) -->
+        <div
+          class="book-card"
+          style="visibility: hidden; pointer-events: none"
+        ></div>
+
+        <div class="book-card t-charcoal" style="--c: #2d2d2d; --cl: #f5f5f5">
+          <div class="book-cover-wrap">
+            <img
+              class="cover"
+              src="coveradult.jpg"
+              alt="Speaking Adventure cover"
+            />
+          </div>
+          <div class="book-card-body">
+            <div class="book-level-badge" style="background: #2d2d2d">
+              Adult Learners
+            </div>
+            <div class="book-title" style="color: #2d2d2d">
+              Speaking Adventure
+            </div>
+            <div class="book-tagline" style="color: #2d2d2d">
+              Communication Skills for Adults
+            </div>
+            <p class="book-setting">
+              Designed for adult learners — from everyday conversation and
+              workplace English to debate, discussion, and confident real-world
+              communication.
+            </p>
+            <ul class="features-list">
+              <li>40 communication-focused units</li>
+              <li>Speaking tests &amp; discussion points</li>
+              <li>Report writing &amp; email skills</li>
+              <li>Grammar reference included</li>
+            </ul>
+            <div class="cefr-bar">
+              <span class="cefr-label">CEFR</span>
+              <div class="cefr-pip on" style="background: #2d2d2d"></div>
+              <div class="cefr-pip on" style="background: #2d2d2d"></div>
+              <div class="cefr-pip on" style="background: #2d2d2d"></div>
+              <div class="cefr-pip on" style="background: #2d2d2d"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section">
+      <h2>About the Series</h2>
+      <div class="charlie-section">
+        <img src="charlie_cat2.png" alt="Charlie the cat walking" />
+        <div class="charlie-bubble">
+          Meet Charlie the cat — Kevin and Sami's trusty companion throughout
+          the Adventure Island series!
+        </div>
+      </div>
+      <p style="margin-top: 28px">
+        Adventure Island is a complete ESL English series designed for young
+        learners in Japan. Created by <strong>Graeme Cattermole</strong>, each
+        book follows Kevin and Sami through a new world — from ocean to jungle,
+        beach to snowy mountains, and beyond into enchanted skies.
+      </p>
+      <p>
+        Every book blends engaging storytelling with structured language
+        learning — giving students the vocabulary, grammar, and confidence to
+        communicate in real English.
+      </p>
+      <p>
+        For enquiries, contact:
+        <a
+          href="mailto:graemesworldenglish@gmail.com"
+          style="
+            color: var(--sand);
+            text-decoration: underline;
+            font-size: 30px;
+          "
+          >graemesworldenglish@gmail.com</a
+        >
+      </p>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Books</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">220+</div>
+          <div class="stat-label">Homework Videos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">Pre-A1</div>
+          <div class="stat-label">Starts at</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">A2+</div>
+          <div class="stat-label">Finishes at</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        <strong>Adventure Island</strong> &nbsp;·&nbsp; Created by Graeme
+        Cattermole &nbsp;·&nbsp; Copyright © 2026. All rights reserved.
+      </p>
+    </footer>
+    <script>
+      const translations = {
+        // HERO
+        ".hero-badge": { en: "ESL English Series", ja: "英語シリーズ" },
+        ".hero h1": {
+          en: "Adventure Island",
+          ja: "アドベンチャー・アイランド",
+        },
+        ".hero-sub": {
+          en: "A journey through English — from first words to fluency",
+          ja: "英語の旅 — はじめの一歩から流暢さまで",
+        },
+        ".hero-desc": {
+          en: "Join Kevin and Sami on epic adventures — from deep-sea coral reefs to enchanted skies — as young learners build real English skills every step of the way.",
+          ja: "ケビンとサミと一緒に壮大な冒険へ — 深海のサンゴ礁から魔法の空まで — 子どもたちが本物の英語力を身につけていきます。",
+        },
+
+        // INTRO BAND
+        ".intro-band p": {
+          en: "8 books \u00a0·\u00a0 Pre-A1 to A2+ \u00a0·\u00a0 Homework videos included \u00a0·\u00a0 Songs &amp; comics \u00a0·\u00a0 Created by Graeme Cattermole",
+          ja: "全8冊 \u00a0·\u00a0 Pre-A1〜A2+ \u00a0·\u00a0 宿題動画付き \u00a0·\u00a0 歌＆マンガ \u00a0·\u00a0 グレアム・キャタモール作",
+        },
+
+        // BOOKS SECTION
+        ".section-title": { en: "The Complete Series", ja: "シリーズ全巻" },
+        ".section-sub": {
+          en: "Each book takes Kevin and Sami — and your students — somewhere brand new.",
+          ja: "各巻でケビンとサミが — そして生徒たちが — 新しい世界へと旅立ちます。",
+        },
+
+        // ABOUT
+        ".about-section h2": { en: "About the Series", ja: "シリーズについて" },
+        ".charlie-bubble": {
+          en: "Meet Charlie the cat — Kevin and Sami's trusty companion throughout the Adventure Island series!",
+          ja: "チャーリーという猫をご紹介 — アドベンチャー・アイランド・シリーズを通じてケビンとサミの頼もしい仲間です！",
+        },
+      };
+
+      const bookTranslations = [
+        {
+          badge: { en: "Pre-A1", ja: "入門" },
+          title: { en: "First Steps", ja: "ファースト・ステップス" },
+          tagline: {
+            en: "Your first steps in English!",
+            ja: "英語への第一歩！",
+          },
+          setting: {
+            en: "Kevin and Sami prepare for their very first journey — packing bags at home before the adventure begins.",
+            ja: "ケビンとサミが最初の旅の準備をします — 冒険が始まる前に家で荷物を詰めています。",
+          },
+          features: [
+            { en: "20 easy-to-follow units", ja: "わかりやすい20ユニット" },
+            { en: "40 homework videos", ja: "宿題動画40本" },
+            {
+              en: "Basic commands &amp; phrases",
+              ja: "基本的な表現とフレーズ",
+            },
+            {
+              en: "Over 120 words · 19 songs included",
+              ja: "120語以上・歌19曲収録",
+            },
+          ],
+        },
+        {
+          badge: { en: "A1", ja: "A1" },
+          title: {
+            en: "Adventure Island 1",
+            ja: "アドベンチャー・アイランド1",
+          },
+          tagline: {
+            en: "Phonics, Reading &amp; Beginner English",
+            ja: "フォニックス・読解・入門英語",
+          },
+          setting: {
+            en: "Dive into the deep sea — coral reefs, mysterious creatures, and the sounds of English phonics under the waves.",
+            ja: "深海へダイブ — サンゴ礁、謎の生き物、そして波の下で英語のフォニックスを学びます。",
+          },
+          features: [
+            { en: "34 easy-to-follow units", ja: "わかりやすい34ユニット" },
+            { en: "45 homework videos", ja: "宿題動画45本" },
+            {
+              en: "Full A–Z phonics explanations",
+              ja: "A〜Zフォニックス完全解説",
+            },
+            {
+              en: "Over 100 words · review comic",
+              ja: "100語以上・復習マンガ付き",
+            },
+          ],
+        },
+        {
+          badge: { en: "Upper A1", ja: "A1上級" },
+          title: {
+            en: "Adventure Island 2",
+            ja: "アドベンチャー・アイランド2",
+          },
+          tagline: {
+            en: "Beginner Phrases, Reading, Writing &amp; More",
+            ja: "入門フレーズ・読解・ライティング他",
+          },
+          setting: {
+            en: "Trek into the emerald jungle — lush rainforests, exotic wildlife, and the first building blocks of English sentences.",
+            ja: "エメラルドのジャングルへ — 緑豊かな熱帯雨林、珍しい野生動物、英語の文章の基礎を学びます。",
+          },
+          features: [
+            { en: "18 easy-to-follow units", ja: "わかりやすい18ユニット" },
+            { en: "34 homework videos", ja: "宿題動画34本" },
+            { en: "Comics to reinforce grammar", ja: "文法定着のためのマンガ" },
+            {
+              en: "Over 200 words · 12+ grammar points",
+              ja: "200語以上・文法12項目以上",
+            },
+          ],
+        },
+        {
+          badge: { en: "A1", ja: "A1" },
+          title: {
+            en: "Adventure Island 3",
+            ja: "アドベンチャー・アイランド3",
+          },
+          tagline: {
+            en: "Modal Verbs, Present Simple &amp; More",
+            ja: "助動詞・現在形・その他",
+          },
+          setting: {
+            en: "Step onto sun-drenched shores — golden sands, hidden island treasures, and expanding English grammar knowledge.",
+            ja: "太陽が輝く浜辺へ — 黄金の砂浜、隠された島の宝物、英語の文法知識を広げます。",
+          },
+          features: [
+            { en: "18 easy-to-follow lessons", ja: "わかりやすい18レッスン" },
+            { en: "34 homework videos", ja: "宿題動画34本" },
+            { en: "Comics to reinforce grammar", ja: "文法定着のためのマンガ" },
+            {
+              en: "Over 200 words · 12+ grammar points",
+              ja: "200語以上・文法12項目以上",
+            },
+          ],
+        },
+        {
+          badge: { en: "A1+", ja: "A1+" },
+          title: {
+            en: "Adventure Island 4",
+            ja: "アドベンチャー・アイランド4",
+          },
+          tagline: {
+            en: "Past, Present, Future Tense &amp; More",
+            ja: "過去・現在・未来形・その他",
+          },
+          setting: {
+            en: "Trade sandals for snow boots as Kevin and Sami climb frost-covered peaks — mastering all three tenses of English.",
+            ja: "サンダルをスノーブーツに履き替えて、ケビンとサミが雪に覆われた山頂を目指します — 英語の3つの時制をマスター。",
+          },
+          features: [
+            { en: "18 easy-to-follow lessons", ja: "わかりやすい18レッスン" },
+            { en: "34 homework videos", ja: "宿題動画34本" },
+            { en: "Comics to reinforce grammar", ja: "文法定着のためのマンガ" },
+            {
+              en: "Over 200 words · 20+ grammar points",
+              ja: "200語以上・文法20項目以上",
+            },
+          ],
+        },
+        {
+          badge: { en: "Lower A2", ja: "A2初級" },
+          title: {
+            en: "Adventure Island 5",
+            ja: "アドベンチャー・アイランド5",
+          },
+          tagline: {
+            en: "A Grammar &amp; Writing Focused Experience",
+            ja: "文法とライティング重視の学習",
+          },
+          setting: {
+            en: "Soar through the Enchanted Skies — gravity-defying landscapes where language and imagination reach their peak.",
+            ja: "魔法の空を飛び越えて — 重力を超えた景色の中で、言語と想像力が頂点に達します。",
+          },
+          features: [
+            { en: "18 easy-to-follow units", ja: "わかりやすい18ユニット" },
+            { en: "2 review and test units", ja: "復習・テストユニット2つ" },
+            { en: "14+ grammar points", ja: "文法14項目以上" },
+            { en: "Report writing practice", ja: "レポートライティング練習" },
+          ],
+        },
+        {
+          badge: { en: "A2+", ja: "A2+" },
+          title: {
+            en: "Adventure Island JHS",
+            ja: "アドベンチャー・アイランド中学",
+          },
+          tagline: {
+            en: "Essential Speaking, Listening &amp; Communication",
+            ja: "必須スピーキング・リスニング・コミュニケーション",
+          },
+          setting: {
+            en: "The final frontier — Adventure Academy Junior High, where knowledge transforms into confident real-world communication.",
+            ja: "最終フロンティア — アドベンチャー・アカデミー中学校。知識が自信を持った実際のコミュニケーションへと変わります。",
+          },
+          features: [
+            {
+              en: "32 speaking units · 6 grammar units",
+              ja: "スピーキング32ユニット・文法6ユニット",
+            },
+            {
+              en: "Topic-based discussion points",
+              ja: "テーマ別ディスカッションポイント",
+            },
+            {
+              en: "Report writing &amp; listening practice",
+              ja: "レポートライティング＆リスニング練習",
+            },
+            {
+              en: "JHS vocabulary · printed in Japan",
+              ja: "中学英単語・日本国内印刷",
+            },
+          ],
+        },
+        {
+          badge: { en: "Adult Learners", ja: "大人向け" },
+          title: {
+            en: "Speaking Adventure",
+            ja: "スピーキング・アドベンチャー",
+          },
+          tagline: {
+            en: "Communication Skills for Adults",
+            ja: "大人のためのコミュニケーションスキル",
+          },
+          setting: {
+            en: "Designed for adult learners — from everyday conversation and workplace English to debate, discussion, and confident real-world communication.",
+            ja: "大人の学習者のために設計 — 日常会話やビジネス英語から、ディベート、ディスカッション、自信を持った実践的なコミュニケーションまで。",
+          },
+          features: [
+            {
+              en: "40 communication-focused units",
+              ja: "コミュニケーション重視の40ユニット",
+            },
+            {
+              en: "Speaking tests &amp; discussion points",
+              ja: "スピーキングテスト＆ディスカッションポイント",
+            },
+            {
+              en: "Report writing &amp; email skills",
+              ja: "レポートライティング＆メールスキル",
+            },
+            { en: "Grammar reference included", ja: "文法リファレンス付き" },
+          ],
+        },
+      ];
+
+      const aboutParas = [
+        {
+          en: "Adventure Island is a complete ESL English series designed for young learners in Japan. Created by <strong>Graeme Cattermole</strong>, each book follows Kevin and Sami through a new world — from ocean to jungle, beach to snowy mountains, and beyond into enchanted skies.",
+          ja: "アドベンチャー・アイランドは、日本の子どもたちのために作られた完全なESL英語シリーズです。<strong>グレアム・キャタモール</strong>が制作し、各巻でケビンとサミが新しい世界を旅します — 海からジャングル、浜辺から雪山、そして魔法の空へ。",
+        },
+        {
+          en: "Every book blends engaging storytelling with structured english learning giving students the vocabulary, grammar, and confidence to communicate in real English.",
+          ja: "各巻は魅力的なストーリーと体系的な言語学習を組み合わせています—生徒たちに語彙力、文法力、そして本物の英語でコミュニケーションできる自信を与えます。",
+        },
+      ];
+
+      const enquiryText = {
+        en: "For enquiries, contact:",
+        ja: "お問い合わせはこちら：",
+      };
+
+      const statsLabels = [
+        { en: "Books", ja: "冊" },
+        { en: "Homework Videos", ja: "宿題動画" },
+        { en: "Starts at", ja: "開始レベル" },
+        { en: "Finishes at", ja: "終了レベル" },
+      ];
+
+      const footerText = {
+        en: "Created by Graeme Cattermole \u00a0·\u00a0 Copyright © 2026. All rights reserved.",
+        ja: "グレアム・キャタモール作 \u00a0·\u00a0 Copyright © 2026. 無断複製禁止。",
+      };
+
+      let isJapanese = false;
+
+      function toggleLang() {
+        isJapanese = !isJapanese;
+        const lang = isJapanese ? "ja" : "en";
+        const btn = document.getElementById("langBtn");
+        btn.textContent = isJapanese ? "🇬🇧 English" : "🇯🇵 日本語";
+
+        // Simple selector translations
+        for (const [selector, t] of Object.entries(translations)) {
+          const el = document.querySelector(selector);
+          if (el) el.innerHTML = t[lang];
+        }
+
+        // Shrink h1 in Japanese
+        const h1 = document.querySelector(".hero h1");
+        if (h1) h1.classList.toggle("ja", isJapanese);
+
+        // Book cards (skip the invisible placeholder)
+        const cards = document.querySelectorAll(
+          ".books-grid .book-card:not([style*='visibility'])",
+        );
+        cards.forEach((card, i) => {
+          const bt = bookTranslations[i];
+          if (!bt) return;
+          const badge = card.querySelector(".book-level-badge");
+          const title = card.querySelector(".book-title");
+          const tagline = card.querySelector(".book-tagline");
+          const setting = card.querySelector(".book-setting");
+          const lis = card.querySelectorAll(".features-list li");
+          if (badge) badge.textContent = bt.badge[lang];
+          if (title) title.textContent = bt.title[lang];
+          if (tagline) tagline.innerHTML = bt.tagline[lang];
+          if (setting) setting.textContent = bt.setting[lang];
+          lis.forEach((li, j) => {
+            if (bt.features[j]) li.innerHTML = bt.features[j][lang];
+          });
+        });
+
+        // About paragraphs
+        const paras = document.querySelectorAll(".about-section > p");
+        if (paras[0]) paras[0].innerHTML = aboutParas[0][lang];
+        if (paras[1]) paras[1].innerHTML = aboutParas[1][lang];
+        if (paras[2]) {
+          paras[2].innerHTML = `${enquiryText[lang]} <a href="mailto:graemesworldenglish@gmail.com" style="color: var(--sand); text-decoration: underline; font-size: 30px;">graemesworldenglish@gmail.com</a>`;
+        }
+
+        // Stats labels
+        const statEls = document.querySelectorAll(".stat-label");
+        statEls.forEach((el, i) => {
+          if (statsLabels[i]) el.textContent = statsLabels[i][lang];
+        });
+
+        // Footer
+        const footerP = document.querySelector("footer p");
+        if (footerP)
+          footerP.innerHTML = `<strong>Adventure Island</strong> \u00a0·\u00a0 ${footerText[lang]}`;
+      }
+    </script>
+  </body>
+</html>
+Done
