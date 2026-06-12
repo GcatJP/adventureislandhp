@@ -1222,7 +1222,7 @@
         // Simple selector translations
         for (const [selector, t] of Object.entries(translations)) {
           const el = document.querySelector(selector);
-          if (title) title.innerHTML = bt.title[lang];
+          if (el) el.innerHTML = t[lang];
         }
 
         // Shrink h1 in Japanese
@@ -1242,7 +1242,7 @@
           const setting = card.querySelector(".book-setting");
           const lis = card.querySelectorAll(".features-list li");
           if (badge) badge.textContent = bt.badge[lang];
-          if (title) title.textContent = bt.title[lang];
+          if (title) title.innerHTML = bt.title[lang];
           if (tagline) tagline.innerHTML = bt.tagline[lang];
           if (setting) setting.textContent = bt.setting[lang];
           lis.forEach((li, j) => {
