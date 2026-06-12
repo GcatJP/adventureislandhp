@@ -464,15 +464,7 @@
         line-height: 1.5;
         position: relative;
       }
-      .charlie-bubble::before {
-        content: "";
-        position: absolute;
-        left: -10px;
-        top: 50%;
-        transform: translateY(-50%);
-        border: 6px solid transparent;
-        border-right-color: rgba(255, 255, 255, 0.25);
-      }
+     
       .charlie-footer {
         position: absolute;
         bottom: 70px;
@@ -901,12 +893,9 @@
       <p>
         For enquiries, contact:
         <a
-          href="mailto:graemesworldenglish@gmail.com"
-          style="
-            color: var(--sand);
-            text-decoration: underline;
-            font-size: 30px;
-          "
+      <a href="mailto:graemesworldenglish@gmail.com"
+   style="color: var(--sand); text-decoration: underline; font-size: clamp(16px, 3vw, 30px);">
+          
           >graemesworldenglish@gmail.com</a
         >
       </p>
@@ -1256,8 +1245,7 @@
         if (paras[0]) paras[0].innerHTML = aboutParas[0][lang];
         if (paras[1]) paras[1].innerHTML = aboutParas[1][lang];
         if (paras[2]) {
-          paras[2].innerHTML = `${enquiryText[lang]} <a href="mailto:graemesworldenglish@gmail.com" style="color: var(--sand); text-decoration: underline; font-size: 30px;">graemesworldenglish@gmail.com</a>`;
-        }
+         paras[2].innerHTML = `${enquiryText[lang]} <a href="mailto:graemesworldenglish@gmail.com" style="color: var(--sand); text-decoration: underline; font-size: clamp(16px, 3vw, 30px);">graemesworldenglish@gmail.com</a>`;
 
         // Stats labels
         const statEls = document.querySelectorAll(".stat-label");
