@@ -448,7 +448,7 @@
         flex-wrap: wrap;
       }
       .charlie-section img {
-        width: clamp(80px, 12vw, 140px);
+        width: clamp(80px, 15vw, 160px);
         filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
       }
       .charlie-bubble {
@@ -519,6 +519,11 @@
         .book-card-placeholder {
           display: none;
         }
+        @media (max-width: 480px) and (orientation: portrait) {
+  .charlie-hero {
+    display: none;
+  }
+}
       }
     </style>
   </head>
@@ -896,7 +901,7 @@
       <a href="mailto:graemesworldenglish@gmail.com"
    style="color: var(--sand); text-decoration: underline; font-size: clamp(16px, 3vw, 30px);">
           
-          >graemesworldenglish@gmail.com</a
+          graemesworldenglish@gmail.com</a
         >
       </p>
       <div class="stats-row">
@@ -1246,7 +1251,7 @@
         if (paras[1]) paras[1].innerHTML = aboutParas[1][lang];
         if (paras[2]) {
          paras[2].innerHTML = `${enquiryText[lang]} <a href="mailto:graemesworldenglish@gmail.com" style="color: var(--sand); text-decoration: underline; font-size: clamp(16px, 3vw, 30px);">graemesworldenglish@gmail.com</a>`;
-
+}
         // Stats labels
         const statEls = document.querySelectorAll(".stat-label");
         statEls.forEach((el, i) => {
