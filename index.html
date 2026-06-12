@@ -451,7 +451,7 @@
         flex-wrap: wrap;
       }
       .charlie-section img {
-        width: clamp(80px, 15vw, 160px);
+        width: clamp(100px, 15vw, 160px);
         filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
       }
       .charlie-bubble {
@@ -519,6 +519,14 @@
           display: none;
         }
       }
+      .mobile-break {
+        display: none;
+      }
+      @media (max-width: 480px) and (orientation: portrait) {
+        .mobile-break {
+          display: block;
+        }
+      }
     </style>
   </head>
   <body>
@@ -529,6 +537,7 @@
     <section class="hero">
       <div class="hero-badge">ESL English Series</div>
       <h1>Adventure Island</h1>
+      <h1>Adventure <span class="mobile-break"></span>Island</h1>
       <p class="hero-sub">
         A journey through English — from first words to speaking fluency
       </p>
@@ -1114,7 +1123,7 @@
           badge: { en: "A2+", ja: "A2+" },
           title: {
             en: "Adventure Island JHS",
-            ja: "アドベンチャー・アイランド中学",
+            ja: "アドベンチャー・アイランド<br>中学",
           },
           tagline: {
             en: "Essential Speaking, Listening &amp; Communication",
