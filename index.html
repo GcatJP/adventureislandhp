@@ -1222,7 +1222,7 @@
         // Simple selector translations
         for (const [selector, t] of Object.entries(translations)) {
           const el = document.querySelector(selector);
-          if (el) el.innerHTML = t[lang];
+          if (title) title.innerHTML = bt.title[lang];
         }
 
         // Shrink h1 in Japanese
