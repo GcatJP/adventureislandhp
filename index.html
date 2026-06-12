@@ -64,7 +64,9 @@
         margin-bottom: 20px;
       }
       .hero h1 {
-        font-family: "Chalkboard SE", "Comic Sans MS", "Baloo 2", cursive;
+        font-family:
+          "Chalkboard SE", "Comic Sans MS", "Baloo 2",
+          "Hiragino Maru Gothic ProN", "M PLUS Rounded 1c", cursive;
         font-size: clamp(52px, 9vw, 100px);
         font-weight: 800;
         color: #f7c948;
@@ -273,7 +275,8 @@
         color: #fff;
       }
       .book-title {
-        font-family: "Baloo 2", cursive;
+        font-family:
+          "Baloo 2", "Hiragino Maru Gothic ProN", "M PLUS Rounded 1c", cursive;
         font-size: 21px;
         font-weight: 800;
         line-height: 1.2;
@@ -385,7 +388,7 @@
       }
       .about-section h2 {
         font-family: "Baloo 2", cursive;
-        font-size: clamp(32px, 8vw, 1000px);
+        font-size: clamp(32px, 8vw, 52px);
         font-weight: 800;
         margin-bottom: -40px;
         color: var(--sand);
@@ -464,7 +467,7 @@
         line-height: 1.5;
         position: relative;
       }
-     
+
       .charlie-footer {
         position: absolute;
         bottom: 70px;
@@ -472,15 +475,6 @@
         width: 80px;
         filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         animation: charlieBob 2.5s ease-in-out infinite;
-      }
-      @keyframes charlieBob {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(0);
-        }
       }
 
       @keyframes fadeUp {
@@ -519,11 +513,11 @@
         .book-card-placeholder {
           display: none;
         }
-        @media (max-width: 480px) and (orientation: portrait) {
-  .charlie-hero {
-    display: none;
-  }
-}
+      }
+      @media (max-width: 480px) and (orientation: portrait) {
+        .charlie-hero {
+          display: none;
+        }
       }
     </style>
   </head>
@@ -536,7 +530,7 @@
       <div class="hero-badge">ESL English Series</div>
       <h1>Adventure Island</h1>
       <p class="hero-sub">
-        A journey through English — from first words to fluency
+        A journey through English — from first words to speaking fluency
       </p>
       <p class="hero-desc">
         Join Kevin and Sami on epic adventures — from deep-sea coral reefs to
@@ -580,8 +574,7 @@
     <section class="books-section">
       <h2 class="section-title">The Complete Series</h2>
       <p class="section-sub">
-        Each book takes Kevin and Sami — and your students — somewhere brand
-        new.
+        Each book takes Kevin and Sami — and your students — somewhere new.
       </p>
 
       <div class="books-grid">
@@ -640,7 +633,7 @@
             <ul class="features-list">
               <li>34 easy-to-follow units</li>
               <li>45 homework videos</li>
-              <li>Full A–Z phonics explanations</li>
+              <li>Full a–z phonics explanations</li>
               <li>Over 100 words · review comic</li>
             </ul>
             <div class="cefr-bar">
@@ -816,7 +809,7 @@
               <li>32 speaking units · 6 grammar units</li>
               <li>Topic-based discussion points</li>
               <li>Report writing &amp; listening practice</li>
-              <li>JHS vocabulary · printed in Japan</li>
+              <li>JHS vocabulary</li>
             </ul>
             <div class="cefr-bar">
               <span class="cefr-label">CEFR</span>
@@ -898,9 +891,13 @@
       <p>
         For enquiries, contact:
         <a
-      <a href="mailto:graemesworldenglish@gmail.com"
-   style="color: var(--sand); text-decoration: underline; font-size: clamp(16px, 3vw, 30px);">
-          
+          href="mailto:graemesworldenglish@gmail.com"
+          style="
+            color: var(--sand);
+            text-decoration: underline;
+            font-size: clamp(16px, 3vw, 30px);
+          "
+        >
           graemesworldenglish@gmail.com</a
         >
       </p>
@@ -1250,8 +1247,8 @@
         if (paras[0]) paras[0].innerHTML = aboutParas[0][lang];
         if (paras[1]) paras[1].innerHTML = aboutParas[1][lang];
         if (paras[2]) {
-         paras[2].innerHTML = `${enquiryText[lang]} <a href="mailto:graemesworldenglish@gmail.com" style="color: var(--sand); text-decoration: underline; font-size: clamp(16px, 3vw, 30px);">graemesworldenglish@gmail.com</a>`;
-}
+          paras[2].innerHTML = `${enquiryText[lang]} <a href="mailto:graemesworldenglish@gmail.com" style="color: var(--sand); text-decoration: underline; font-size: clamp(16px, 3vw, 30px);">graemesworldenglish@gmail.com</a>`;
+        }
         // Stats labels
         const statEls = document.querySelectorAll(".stat-label");
         statEls.forEach((el, i) => {
