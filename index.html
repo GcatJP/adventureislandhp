@@ -939,10 +939,7 @@
       const translations = {
         // HERO
         ".hero-badge": { en: "ESL English Series", ja: "英語シリーズ" },
-        ".hero h1": {
-          en: "Adventure Island",
-          ja: "アドベンチャー・アイランド",
-        },
+
         ".hero-sub": {
           en: "A journey through English — from first words to fluency",
           ja: "英語の旅 — はじめの一歩から流暢さまで",
@@ -1225,9 +1222,18 @@
           if (el) el.innerHTML = t[lang];
         }
 
-        // Shrink h1 in Japanese
+        // H1 Japanese with conditional line break
         const h1 = document.querySelector(".hero h1");
-        if (h1) h1.classList.toggle("ja", isJapanese);
+        if (h1) {
+          if (isJapanese && window.innerWidth <= 480) {
+            h1.innerHTML = "アドベンチャー・<br>アイランド";
+          } else if (isJapanese) {
+            h1.innerHTML = "アドベンチャー・アイランド";
+          } else {
+            h1.innerHTML = "Adventure <span class='mobile-break'></span>Island";
+          }
+          h1.classList.toggle("ja", isJapanese);
+        }
 
         // Book cards (skip the invisible placeholder)
         const cards = document.querySelectorAll(
