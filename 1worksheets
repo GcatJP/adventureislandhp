@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="0; url=https://adventureislandesl.b-cdn.net/Worksheets%201.pdf">
+  <style>
+    body {
+      background-image: url('IMG_3615.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    p {
+      font-size: 1.2em;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      padding: 16px 24px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+</html>
