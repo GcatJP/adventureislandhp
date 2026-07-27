@@ -223,7 +223,12 @@
       .book-card:nth-child(7) {
         animation-delay: 0.35s;
       }
-
+      .book-card:nth-child(8) {
+        animation-delay: 0.4s;
+      }
+      .book-card:nth-child(9) {
+        animation-delay: 0.45s;
+      }
       /* COVER IMAGE */
       .book-cover-wrap {
         position: relative;
@@ -388,6 +393,10 @@
         --c: #c0187a;
         --cl: #fce4f1;
       }
+      .t-brown {
+        --c: #8b5a2b;
+        --cl: #f7efe6;
+      }
 
       /* ABOUT */
       .about-section {
@@ -520,12 +529,7 @@
       .lang-toggle:hover {
         background: var(--sand-dark);
       }
-      /* Hide placeholder on 2-column layout */
-      @media (max-width: 980px) {
-        .book-card-placeholder {
-          display: none;
-        }
-      }
+
       @media (max-width: 480px) and (orientation: portrait) {
         .charlie-hero {
           display: none;
@@ -584,9 +588,9 @@
     <!-- INTRO BAND -->
     <div class="intro-band">
       <p>
-        8 books &nbsp;·&nbsp; Pre-A1 to A2+ &nbsp;·&nbsp; Homework videos
-        included &nbsp;·&nbsp; Songs &amp; comics &nbsp;·&nbsp; Created by
-        Graeme Cattermole
+        9 Books &nbsp;·&nbsp; Pre-A1 to A2+ &nbsp;·&nbsp; Homework Videos Apps
+        &nbsp;·&nbsp; Free Games Apps &nbsp;·&nbsp; Songs &amp; comics
+        &nbsp;·&nbsp; Created by Graeme Cattermole
       </p>
     </div>
 
@@ -621,13 +625,6 @@
               <li>Basic commands &amp; phrases</li>
               <li>Over 120 words · 19 songs included</li>
             </ul>
-            <div class="cefr-bar">
-              <span class="cefr-label">CEFR</span>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip"></div>
-              <div class="cefr-pip"></div>
-              <div class="cefr-pip"></div>
-            </div>
           </div>
         </div>
 
@@ -641,7 +638,7 @@
             />
           </div>
           <div class="book-card-body">
-            <div class="book-level-badge">A1</div>
+            <div class="book-level-badge">Pre-A1</div>
             <div class="book-title">Adventure Island 1</div>
             <div class="book-tagline">
               Phonics, Reading &amp; Beginner English
@@ -656,13 +653,6 @@
               <li>Full a–z phonics explanations</li>
               <li>Over 100 words · review comic</li>
             </ul>
-            <div class="cefr-bar">
-              <span class="cefr-label">CEFR</span>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip"></div>
-              <div class="cefr-pip"></div>
-            </div>
           </div>
         </div>
 
@@ -676,7 +666,7 @@
             />
           </div>
           <div class="book-card-body">
-            <div class="book-level-badge">Upper A1</div>
+            <div class="book-level-badge">Lower A1</div>
             <div class="book-title">Adventure Island 2</div>
             <div class="book-tagline">
               Beginner Phrases, Reading, Writing &amp; More
@@ -691,13 +681,6 @@
               <li>Comics to reinforce grammar</li>
               <li>Over 200 words · 12+ grammar points</li>
             </ul>
-            <div class="cefr-bar">
-              <span class="cefr-label">CEFR</span>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip"></div>
-              <div class="cefr-pip"></div>
-            </div>
           </div>
         </div>
 
@@ -726,13 +709,6 @@
               <li>Comics to reinforce grammar</li>
               <li>Over 200 words · 12+ grammar points</li>
             </ul>
-            <div class="cefr-bar">
-              <span class="cefr-label">CEFR</span>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip"></div>
-              <div class="cefr-pip"></div>
-            </div>
           </div>
         </div>
 
@@ -746,7 +722,7 @@
             />
           </div>
           <div class="book-card-body">
-            <div class="book-level-badge">A1+</div>
+            <div class="book-level-badge">Upper A1</div>
             <div class="book-title">Adventure Island 4</div>
             <div class="book-tagline">
               Past, Present, Future Tense &amp; More
@@ -761,13 +737,6 @@
               <li>Comics to reinforce grammar</li>
               <li>Over 200 words · 20+ grammar points</li>
             </ul>
-            <div class="cefr-bar">
-              <span class="cefr-label">CEFR</span>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip"></div>
-            </div>
           </div>
         </div>
 
@@ -796,13 +765,6 @@
               <li>14+ grammar points</li>
               <li>Report writing practice</li>
             </ul>
-            <div class="cefr-bar">
-              <span class="cefr-label">CEFR</span>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip"></div>
-            </div>
           </div>
         </div>
 
@@ -816,8 +778,8 @@
             />
           </div>
           <div class="book-card-body">
-            <div class="book-level-badge">A2+</div>
-            <div class="book-title">Adventure Island JHS</div>
+            <div class="book-level-badge">A2</div>
+            <div class="book-title">Adventure Island JHS 1</div>
             <div class="book-tagline">
               Essential Speaking, Listening &amp; Communication
             </div>
@@ -826,26 +788,41 @@
               knowledge transforms into confident real-world communication.
             </p>
             <ul class="features-list">
-              <li>32 speaking units · 6 grammar units</li>
+              <li>34 speaking units · 6 grammar units</li>
               <li>Topic-based discussion points</li>
               <li>Report writing &amp; listening practice</li>
               <li>JHS vocabulary</li>
             </ul>
-            <div class="cefr-bar">
-              <span class="cefr-label">CEFR</span>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip on"></div>
-              <div class="cefr-pip on"></div>
-            </div>
           </div>
         </div>
-        <!-- SPEAKING ADVENTURE (adult) -->
-        <div
-          class="book-card book-card-placeholder"
-          style="visibility: hidden; pointer-events: none"
-        ></div>
-
+        <!-- JHS 2 -->
+        <div class="book-card t-brown">
+          <div class="book-cover-wrap">
+            <img
+              class="cover"
+              src="coverjhs2.jpg"
+              alt="Adventure Island JHS 2 cover"
+            />
+          </div>
+          <div class="book-card-body">
+            <div class="book-level-badge">Upper A2</div>
+            <div class="book-title">Adventure Island JHS 2</div>
+            <div class="book-tagline">
+              Advanced Speaking &amp; Communication
+            </div>
+            <p class="book-setting">
+              Beyond the final frontier — Adventure Academy's advanced program,
+              where confident communicators sharpen their speaking and listening
+              into true fluency.
+            </p>
+            <ul class="features-list">
+              <li>34 speaking units · 6 grammar units</li>
+              <li>Advanced topic-based discussion points</li>
+              <li>Report writing &amp; listening practice</li>
+              <li>JHS+ Vocabulary</li>
+            </ul>
+          </div>
+        </div>
         <div class="book-card t-charcoal" style="--c: #2d2d2d; --cl: #f5f5f5">
           <div class="book-cover-wrap">
             <img
@@ -875,13 +852,6 @@
               <li>Report writing &amp; email skills</li>
               <li>Grammar reference included</li>
             </ul>
-            <div class="cefr-bar">
-              <span class="cefr-label">CEFR</span>
-              <div class="cefr-pip on" style="background: #2d2d2d"></div>
-              <div class="cefr-pip on" style="background: #2d2d2d"></div>
-              <div class="cefr-pip on" style="background: #2d2d2d"></div>
-              <div class="cefr-pip on" style="background: #2d2d2d"></div>
-            </div>
           </div>
         </div>
       </div>
@@ -893,7 +863,7 @@
       <div class="charlie-section">
         <img src="Charlie_cat2.png" alt="Charlie the cat walking" />
         <div class="charlie-bubble">
-          Meet Charlie the cat — Kevin and Sami's trusty companion throughout
+          Meet Charlie the cat<br />Kevin and Sami's trusty companion throughout
           the Adventure Island series!
         </div>
       </div>
@@ -923,7 +893,7 @@
       </p>
       <div class="stats-row">
         <div class="stat">
-          <div class="stat-num">8</div>
+          <div class="stat-num">9</div>
           <div class="stat-label">Books</div>
         </div>
         <div class="stat">
@@ -984,7 +954,7 @@
 
       const bookTranslations = [
         {
-          badge: { en: "Pre-A1", ja: "入門" },
+          badge: { en: "Pre-A1", ja: "Pre-A1" },
           title: { en: "First Steps", ja: "ファースト・ステップス" },
           tagline: {
             en: "Your first steps in English!",
@@ -1008,7 +978,7 @@
           ],
         },
         {
-          badge: { en: "A1", ja: "A1" },
+          badge: { en: "Pre-A1", ja: "Pre-A1" },
           title: {
             en: "Adventure Island 1",
             ja: "アドベンチャー・アイランド1",
@@ -1035,7 +1005,7 @@
           ],
         },
         {
-          badge: { en: "Upper A1", ja: "A1上級" },
+          badge: { en: "Lower A1", ja: "Lower A1" },
           title: {
             en: "Adventure Island 2",
             ja: "アドベンチャー・アイランド2",
@@ -1083,7 +1053,7 @@
           ],
         },
         {
-          badge: { en: "A1+", ja: "A1+" },
+          badge: { en: "Upper A1", ja: "Upper A1" },
           title: {
             en: "Adventure Island 4",
             ja: "アドベンチャー・アイランド4",
@@ -1107,7 +1077,7 @@
           ],
         },
         {
-          badge: { en: "Lower A2", ja: "A2初級" },
+          badge: { en: "Lower A2", ja: "Lower A2" },
           title: {
             en: "Adventure Island 5",
             ja: "アドベンチャー・アイランド5",
@@ -1128,7 +1098,7 @@
           ],
         },
         {
-          badge: { en: "A2+", ja: "A2+" },
+          badge: { en: "A2", ja: "A2" },
           title: {
             en: "Adventure Island JHS",
             ja: "アドベンチャー・アイランド<br>中学",
@@ -1161,7 +1131,40 @@
           ],
         },
         {
-          badge: { en: "Adult Learners", ja: "大人向け" },
+          badge: { en: "Upper A2", ja: "Upper A2" },
+          title: {
+            en: "Adventure Island JHS 2",
+            ja: "アドベンチャー・アイランド<br>中学2",
+          },
+          tagline: {
+            en: "Advanced Speaking &amp; Communication",
+            ja: "上級スピーキング＆コミュニケーション",
+          },
+          setting: {
+            en: "Beyond the final frontier — Adventure Academy's advanced program, where confident communicators sharpen their speaking and listening into true fluency.",
+            ja: "最終フロンティアのその先へ — アドベンチャー・アカデミー上級プログラム。自信を持ったコミュニケーターが、スピーキングとリスニングを磨き、本物の流暢さへと近づきます。",
+          },
+          features: [
+            {
+              en: "32 speaking units · 6 grammar units",
+              ja: "スピーキング32ユニット・文法6ユニット",
+            },
+            {
+              en: "Topic-based discussion points",
+              ja: "テーマ別ディスカッションポイント",
+            },
+            {
+              en: "Report writing &amp; listening practice",
+              ja: "レポートライティング＆リスニング練習",
+            },
+            {
+              en: "JHS vocabulary · printed in Japan",
+              ja: "中学英単語・日本国内印刷",
+            },
+          ],
+        },
+        {
+          badge: { en: "Adult Learners A2", ja: "大人向け A2" },
           title: {
             en: "Speaking Adventure",
             ja: "スピーキング・アドベンチャー",
@@ -1247,10 +1250,7 @@
           h1.classList.toggle("ja", isJapanese);
         }
 
-        // Book cards (skip the invisible placeholder)
-        const cards = document.querySelectorAll(
-          ".books-grid .book-card:not([style*='visibility'])",
-        );
+        const cards = document.querySelectorAll(".books-grid .book-card");
         cards.forEach((card, i) => {
           const bt = bookTranslations[i];
           if (!bt) return;
